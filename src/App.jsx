@@ -1,13 +1,8 @@
 import { useState } from "react";
 
 function App() {
-  const [mobileNavOpen, setMobileNavOpen] = useState(false);
   const [isSubmitted, setIsSubmitted] = useState(false);
   const watermarkItems = Array.from({ length: 30 });
-
-  const handleNavLinkClick = () => {
-    setMobileNavOpen(false);
-  };
 
   const handleContactSubmit = (event) => {
     event.preventDefault();
@@ -35,23 +30,11 @@ function App() {
             <span>Supplier, LLC</span>
           </div>
         </a>
-        <button
-          type="button"
-          className="nav-toggle"
-          aria-controls="main-navigation"
-          aria-expanded={mobileNavOpen}
-          onClick={() => setMobileNavOpen((open) => !open)}
-        >
-          <span className="nav-toggle-line"></span>
-          <span className="nav-toggle-line"></span>
-          <span className="nav-toggle-line"></span>
-          <span className="nav-toggle-text">Menu</span>
-        </button>
-        <div id="main-navigation" className={`nav-links ${mobileNavOpen ? "nav-links-open" : ""}`}>
-          <a href="#about" onClick={handleNavLinkClick}>
+        <div id="main-navigation" className="nav-links">
+          <a href="#about">
             About
           </a>
-          <a href="#contact" onClick={handleNavLinkClick}>
+          <a href="#contact">
             Contact
           </a>
           <a
@@ -60,7 +43,6 @@ function App() {
             rel="noopener noreferrer"
             className="nav-cta"
             aria-label="Open shop portal in a new tab"
-            onClick={handleNavLinkClick}
           >
             Shop Now
           </a>
