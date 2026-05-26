@@ -55,7 +55,7 @@ body {
 
 .site-watermark span {
   font-family: var(--sans);
-  font-size: 13px;
+  font-size: 18px;
   letter-spacing: 0.08em;
   text-transform: lowercase;
   color: #0d2340;
@@ -1063,6 +1063,6 @@ select:focus-visible {
   }
 
   .site-watermark span {
-    font-size: 11px;
+    font-size: 14px;
   }
 }
