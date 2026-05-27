@@ -3,6 +3,7 @@ import { useState } from "react";
 function App() {
   const [isSubmitted, setIsSubmitted] = useState(false);
   const watermarkItems = Array.from({ length: 30 });
+  const logoSrc = `${import.meta.env.BASE_URL}logo_cropped.png`;
 
   const handleContactSubmit = (event) => {
     event.preventDefault();
@@ -20,7 +21,7 @@ function App() {
 
       <nav>
         <a href="#home" className="nav-logo">
-          <img src="/public/logo_cropped.png" alt="Evolution Medical Supplier" className="nav-logo-image" />
+          <img src={logoSrc} alt="Evolution Medical Supplier" className="nav-logo-image" />
         </a>
         <div id="main-navigation" className="nav-links">
           <a href="#about">
