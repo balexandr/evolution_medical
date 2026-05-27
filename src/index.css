@@ -119,6 +119,11 @@ nav {
   color: var(--text-muted);
 }
 
+.nav-logo-image {
+  height: 44px;
+  width: auto;
+}
+
 .nav-links {
   display: flex;
   align-items: center;

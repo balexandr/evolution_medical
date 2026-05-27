@@ -20,15 +20,7 @@ function App() {
 
       <nav>
         <a href="#home" className="nav-logo">
-          <div className="nav-logo-mark">
-            <svg viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg">
-              <path d="M10 2L13 8H17L14 12L15 18L10 15L5 18L6 12L3 8H7L10 2Z" />
-            </svg>
-          </div>
-          <div className="nav-logo-text">
-            Evolution Medical
-            <span>Supplier, LLC</span>
-          </div>
+          <img src="/logo_cropped.png" alt="Evolution Medical Supplier" className="nav-logo-image" />
         </a>
         <div id="main-navigation" className="nav-links">
           <a href="#about">
