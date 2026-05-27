@@ -20,7 +20,7 @@ function App() {
 
       <nav>
         <a href="#home" className="nav-logo">
-          <img src="/logo_cropped.png" alt="Evolution Medical Supplier" className="nav-logo-image" />
+          <img src="/public/logo_cropped.png" alt="Evolution Medical Supplier" className="nav-logo-image" />
         </a>
         <div id="main-navigation" className="nav-links">
           <a href="#about">
