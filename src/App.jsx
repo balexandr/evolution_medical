@@ -453,7 +453,7 @@ function App() {
 
       <footer>
         <div className="footer-logo">
-          Evolution <span>Medical</span>
+          Evolution <span>Medical Supplier</span>
         </div>
         <div className="footer-links">
           <a href="#home">Home</a>
