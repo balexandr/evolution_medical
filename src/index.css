@@ -704,6 +704,22 @@ section {
   margin-bottom: 1rem;
 }
 
+.form-success {
+  background: #e9f9ef;
+  color: #0b5a2e;
+  border: 1px solid #cdebd0;
+  padding: 1rem;
+  border-radius: 10px;
+}
+
+.form-error {
+  color: #8b1e1e;
+  background: #fff0f0;
+  border: 1px solid #f2c6c6;
+  padding: 0.6rem 0.8rem;
+  border-radius: 8px;
+}
+
 .form-group {
   display: flex;
   flex-direction: column;
