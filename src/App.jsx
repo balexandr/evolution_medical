@@ -304,19 +304,45 @@ function App() {
             </div>
 
             <div className="contact-form-card">
-              <div className="jotform-embed" style={{width: '100%'}}>
-                <iframe
-                  title="Contact Form"
-                  id="JotFormIFrame-252274568736367"
-                  src="https://form.jotform.com/252274568736367"
-                  frameBorder="0"
-                  style={{width: '100%', minHeight: '640px'}}
-                  scrolling="no"
-                ></iframe>
-              </div>
-              <p className="form-assistive">
-                Want to use the existing intake portal instead? <a href="https://form.jotform.com/252274568736367?canva-app=1&_height=691" target="_blank" rel="noopener noreferrer">Open secure form</a>
-              </p>
+              <form
+                action="https://formsubmit.co/cs@evomedicalsupplier.com"
+                method="POST"
+                className="contact-form"
+              >
+                <input type="hidden" name="_subject" value="New contact request from Evolution Medical" />
+                <input type="hidden" name="_captcha" value="false" />
+
+                <div className="form-row">
+                  <div className="form-group">
+                    <label htmlFor="name">Name</label>
+                    <input id="name" name="name" type="text" required />
+                  </div>
+                  <div className="form-group">
+                    <label htmlFor="email">Email</label>
+                    <input id="email" name="email" type="email" required />
+                  </div>
+                </div>
+
+                <div className="form-row">
+                  <div className="form-group">
+                    <label htmlFor="company">Company</label>
+                    <input id="company" name="company" type="text" />
+                  </div>
+                  <div className="form-group">
+                    <label htmlFor="phone">Phone</label>
+                    <input id="phone" name="phone" type="tel" />
+                  </div>
+                </div>
+
+                <div className="form-group">
+                  <label htmlFor="message">Message</label>
+                  <textarea id="message" name="message" rows="5" required></textarea>
+                </div>
+
+                <button type="submit" className="btn-primary">
+                  Send Message
+                </button>
+              </form>
             </div>
           </div>
         </div>
