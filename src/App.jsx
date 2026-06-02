@@ -1,23 +1,9 @@
-import { useState } from "react";
-
 function App() {
-  const [isSubmitted, setIsSubmitted] = useState(false);
-  const watermarkItems = Array.from({ length: 30 });
   const logoSrc = `${import.meta.env.BASE_URL}logo_cropped.png`;
-
-  const handleContactSubmit = (event) => {
-    event.preventDefault();
-    setIsSubmitted(true);
-    event.currentTarget.reset();
-  };
 
   return (
     <>
-      <div className="site-watermark" aria-hidden="true">
-        {watermarkItems.map((_, index) => (
-          <span key={index}>bryanalexander.co</span>
-        ))}
-      </div>
+
 
       <nav>
         <a href="#home" className="nav-logo">
@@ -286,8 +272,8 @@ function App() {
                   </div>
                   <div>
                     <div className="contact-info-label">Email</div>
-                    <a className="contact-info-val contact-link" href="mailto:info@evomedicalsupplier.com">
-                      info@evomedicalsupplier.com
+                    <a className="contact-info-val contact-link" href="mailto:Cs@evomedicalsupplier.com">
+                      Cs@evomedicalsupplier.com
                     </a>
                   </div>
                 </div>
@@ -318,39 +304,19 @@ function App() {
             </div>
 
             <div className="contact-form-card">
-              <form onSubmit={handleContactSubmit}>
-                <div className="form-row">
-                  <div className="form-group">
-                    <label htmlFor="fname">First Name</label>
-                    <input type="text" id="fname" placeholder="Jane" autoComplete="given-name" required />
-                  </div>
-                  <div className="form-group">
-                    <label htmlFor="lname">Last Name</label>
-                    <input type="text" id="lname" placeholder="Smith" autoComplete="family-name" required />
-                  </div>
-                </div>
-                <div className="form-group">
-                  <label htmlFor="email">Email Address</label>
-                  <input type="email" id="email" placeholder="jane@yourpractice.com" autoComplete="email" required />
-                </div>
-                <div className="form-group">
-                  <label htmlFor="practice">Practice / Organization</label>
-                  <input type="text" id="practice" placeholder="Smith Family Medicine" autoComplete="organization" required />
-                </div>
-                <div className="form-group">
-                  <label htmlFor="message">Message</label>
-                  <textarea id="message" placeholder="Tell us about your supply needs..." required></textarea>
-                </div>
-                <button type="submit" className="form-submit">
-                  Send Message
-                </button>
-                <p className="form-assistive">
-                  Want to use the existing intake portal instead? <a href="https://form.jotform.com/252274568736367?canva-app=1&_height=691" target="_blank" rel="noopener noreferrer">Open secure form</a>
-                </p>
-                <p className={`form-status ${isSubmitted ? "is-visible" : ""}`} role="status" aria-live="polite">
-                  Thank you. Your message has been received and our team will follow up soon.
-                </p>
-              </form>
+              <div className="jotform-embed" style={{width: '100%'}}>
+                <iframe
+                  title="Contact Form"
+                  id="JotFormIFrame-252274568736367"
+                  src="https://form.jotform.com/252274568736367"
+                  frameBorder="0"
+                  style={{width: '100%', minHeight: '640px'}}
+                  scrolling="no"
+                ></iframe>
+              </div>
+              <p className="form-assistive">
+                Want to use the existing intake portal instead? <a href="https://form.jotform.com/252274568736367?canva-app=1&_height=691" target="_blank" rel="noopener noreferrer">Open secure form</a>
+              </p>
             </div>
           </div>
         </div>

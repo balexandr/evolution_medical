@@ -37,32 +37,6 @@ body {
   background: #f7f7f7;
 }
 
-.site-watermark {
-  position: fixed;
-  inset: 0;
-  z-index: 110;
-  pointer-events: none;
-  display: grid;
-  grid-template-columns: repeat(5, minmax(130px, 1fr));
-  gap: 2.2rem 1.2rem;
-  align-content: center;
-  justify-items: center;
-  transform: rotate(-24deg) scale(1.06);
-  opacity: 0.05;
-  user-select: none;
-  overflow: hidden;
-}
-
-.site-watermark span {
-  font-family: var(--sans);
-  font-size: 18px;
-  letter-spacing: 0.08em;
-  text-transform: lowercase;
-  color: #0d2340;
-  white-space: nowrap;
-  font-weight: 600;
-}
-
 nav {
   position: fixed;
   top: 0;
@@ -703,6 +677,20 @@ section {
   border: 1px solid var(--border);
   border-radius: 20px;
   padding: 2.5rem;
+}
+
+.jotform-embed {
+  width: 100%;
+  border-radius: 20px;
+  overflow: hidden;
+  background: var(--white);
+  border: 1px solid var(--border);
+}
+
+.jotform-embed iframe {
+  width: 100%;
+  min-height: 720px;
+  border: none;
 }
 
 .form-row {
