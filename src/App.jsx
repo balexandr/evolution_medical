@@ -1,10 +1,29 @@
-import { useState } from "react";
+import { useState, useEffect } from "react";
 
 function App() {
   const logoSrc = `${import.meta.env.BASE_URL}logo_cropped.png`;
 
   const [status, setStatus] = useState("idle");
   const [formMessage, setFormMessage] = useState("");
+  const [showTerms, setShowTerms] = useState(false);
+
+  function openTerms(e) {
+    e.preventDefault();
+    setShowTerms(true);
+  }
+
+  function closeTerms() {
+    setShowTerms(false);
+  }
+
+  useEffect(() => {
+    if (!showTerms) return;
+    function onKey(e) {
+      if (e.key === "Escape") setShowTerms(false);
+    }
+    document.addEventListener("keydown", onKey);
+    return () => document.removeEventListener("keydown", onKey);
+  }, [showTerms]);
 
   async function handleSubmit(e) {
     e.preventDefault();
@@ -494,9 +513,92 @@ function App() {
           <a href="https://evolution.shop.workd.com" target="_blank" rel="noopener noreferrer">
             Shop
           </a>
+          <a href="#terms" onClick={openTerms}>
+            Terms &amp; Conditions
+          </a>
         </div>
         <div className="footer-copy">Copyright 2026 Evolution Medical Supplier, LLC. All rights reserved.</div>
       </footer>
+
+      {showTerms && (
+        <div
+          className="modal-overlay"
+          role="presentation"
+          onClick={closeTerms}
+        >
+          <div
+            className="modal-box"
+            role="dialog"
+            aria-modal="true"
+            aria-labelledby="terms-title"
+            onClick={(e) => e.stopPropagation()}
+          >
+            <button
+              type="button"
+              className="modal-close"
+              aria-label="Close"
+              onClick={closeTerms}
+            >
+              &times;
+            </button>
+            <h2 id="terms-title" className="modal-title">
+              Invoice Terms &amp; Conditions
+            </h2>
+            <div className="modal-body">
+              <p>
+                By purchasing goods or services from Evolution Medical Supplier, LLC
+                (&ldquo;Evolution&rdquo;), the customer acknowledges and agrees to the
+                following terms:
+              </p>
+              <ol>
+                <li>
+                  <strong>Governing Law; Venue and Jurisdiction.</strong> This invoice
+                  and any transaction between the customer and Evolution shall be
+                  governed by the laws of the State of New York, without regard to
+                  conflict-of-law principles. Any dispute, claim, or legal proceeding
+                  arising out of or relating to this invoice, the underlying
+                  transaction, or the parties&rsquo; business relationship shall be
+                  brought exclusively in a court of competent jurisdiction located in
+                  New York County, New York, and the customer consents to such
+                  jurisdiction and venue.
+                </li>
+                <li>
+                  <strong>Past-Due Balances.</strong> Any invoice or unpaid balance
+                  remaining outstanding for more than thirty (30) days shall accrue
+                  interest at the maximum rate permitted by applicable law, calculated
+                  from the date the payment became due until paid in full.
+                </li>
+                <li>
+                  <strong>Collections.</strong> Any account referred to a collection
+                  agency, attorney, or other third party for collection due to
+                  nonpayment shall be subject to a collection fee equal to
+                  twenty-five percent (25%) of the outstanding balance, to the extent
+                  permitted by applicable law, in addition to any accrued interest
+                  and other amounts lawfully recoverable.
+                </li>
+                <li>
+                  <strong>No Assignment.</strong> No customer, purchaser, creditor, or
+                  other party may assign, transfer, sell, pledge, factor, encumber, or
+                  otherwise convey any right, title, interest, claim, or obligation
+                  relating to this invoice or the underlying transaction without the
+                  prior express written consent of Evolution Medical Supplier, LLC.
+                  Any attempted assignment or transfer without such written consent
+                  shall be void to the fullest extent permitted by law.
+                </li>
+                <li>
+                  <strong>Final Sales; Returns.</strong> All sales are final. A
+                  customer may submit a request for a return, exchange, credit, or
+                  refund; however, all such requests are subject to review and
+                  approval by Evolution Medical Supplier, LLC on a case-by-case
+                  basis. Evolution reserves the right, in its sole discretion and
+                  subject to applicable law, to approve or deny any such request and
+                  to establish any conditions applicable to an approved return.
+                </li>
+              </ol>
+            </div>
+          </div>
+        </div>
+      )}
 
     </>
   );

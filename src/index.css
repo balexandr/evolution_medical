@@ -954,6 +954,93 @@ footer {
   text-decoration: underline;
 }
 
+.modal-overlay {
+  position: fixed;
+  inset: 0;
+  z-index: 200;
+  background: rgba(10, 20, 35, 0.6);
+  backdrop-filter: blur(3px);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 2rem 1.25rem;
+}
+
+.modal-box {
+  position: relative;
+  width: 100%;
+  max-width: 640px;
+  max-height: 82vh;
+  overflow-y: auto;
+  background: var(--white);
+  border-radius: 16px;
+  padding: 2.5rem;
+  box-shadow: 0 24px 64px rgba(10, 20, 35, 0.35);
+}
+
+.modal-close {
+  position: absolute;
+  top: 1rem;
+  right: 1rem;
+  width: 36px;
+  height: 36px;
+  border-radius: 50%;
+  border: 1px solid var(--border);
+  background: var(--off-white);
+  color: var(--navy);
+  font-size: 20px;
+  line-height: 1;
+  cursor: pointer;
+  transition: background 0.2s, color 0.2s;
+}
+
+.modal-close:hover {
+  background: var(--sky);
+  color: var(--white);
+}
+
+.modal-title {
+  font-family: var(--serif);
+  font-size: 1.5rem;
+  color: var(--navy);
+  margin-bottom: 1.2rem;
+  padding-right: 2rem;
+}
+
+.modal-body {
+  font-size: 14px;
+  line-height: 1.65;
+  color: var(--text-muted);
+}
+
+.modal-body p {
+  margin-bottom: 1rem;
+}
+
+.modal-body ol {
+  margin: 0 0 1rem;
+  padding-left: 1.3rem;
+  display: flex;
+  flex-direction: column;
+  gap: 0.9rem;
+}
+
+.modal-body li::marker {
+  font-weight: 600;
+  color: var(--navy);
+}
+
+.modal-body strong {
+  color: var(--navy);
+}
+
+@media (max-width: 600px) {
+  .modal-box {
+    padding: 1.75rem;
+    max-height: 88vh;
+  }
+}
+
 a:focus-visible,
 button:focus-visible,
 input:focus-visible,
